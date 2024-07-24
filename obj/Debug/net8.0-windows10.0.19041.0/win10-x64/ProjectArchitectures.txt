@@ -1,0 +1,1 @@
+C:\Users\playd\source\repos\AppMauiClima\AppMauiClima.csproj;x64

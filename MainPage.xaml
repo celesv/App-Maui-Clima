@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMauiClima.MainPage"
+             xmlns:local="clr-namespace:AppMauiClima">
+
+    <ContentPage.BindingContext>
+        <local:WeatherViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="10">
+        <Entry x:Name="LatitudeEntry" Placeholder="Ingresa la latitud" Keyboard="Text" />
+        <Entry x:Name="LongitudeEntry" Placeholder="Ingresa la longitud" Keyboard="Text" />
+        <Button Text="Obtener Clima" Clicked="OnGetWeatherClicked" />
+        <Label Text="{Binding Timezone, StringFormat='País: {0}'}" FontSize="24" />
+        <Label Text="{Binding Temperature, StringFormat='Temperatura: {0}'}" FontSize="24" />
+        <Label Text="{Binding Humidity, StringFormat='Humedad: {0}%'}" FontSize="24" />
+        <Label Text="{Binding WeatherSummary, StringFormat='Resumen del Clima: {0}'}" FontSize="24" />
+        <Image Source="{Binding WeatherIcon}" WidthRequest="200" HeightRequest="200" Aspect="AspectFill" />
+    </StackLayout>
+</ContentPage>
